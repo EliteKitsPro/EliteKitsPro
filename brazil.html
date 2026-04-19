@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Brazil Windbreaker</title>
+<title>Morocco Jersey</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -11,16 +11,15 @@
 
 <div class="product-page">
 
-  <h1>Brazil Windbreaker</h1>
-  <p>€49.99</p>
+  <h1>Morocco Jersey</h1>
+  <p>€29.99</p>
 
-  <img id="mainImg" src="https://github.com/EliteKitsPro/EliteKitsPro/blob/main/IMG_0488.jpeg?raw=true">
+  <img id="mainImg" src="https://github.com/EliteKitsPro/EliteKitsPro/blob/main/IMG_0482.jpeg?raw=true">
 
-  <!-- COLORS -->
+  <!-- VARIANTS -->
   <div class="variants">
-    <button onclick="setImg('blue')">Blue</button>
-    <button onclick="setImg('white')">White</button>
-    <button onclick="setImg('black')">Black</button>
+    <button onclick="setImg('home')">Home</button>
+    <button onclick="setImg('away')">Away</button>
   </div>
 
   <!-- SIZES -->
@@ -31,7 +30,7 @@
     <button onclick="setSize('XL')">XL</button>
   </div>
 
-  <button onclick="addToCart('Brazil Windbreaker (' + size + ')', 49.99)">
+  <button onclick="addToCart('Morocco Jersey (' + size + ')', 29.99)">
     Add to Cart
   </button>
 
@@ -44,20 +43,25 @@ function setSize(s){
   size = s;
 }
 
-function setImg(color){
+function setImg(type){
   let img = document.getElementById("mainImg");
 
-  if(color === "blue"){
-    img.src = "https://github.com/EliteKitsPro/EliteKitsPro/blob/main/IMG_0488.jpeg?raw=true";
+  if(type === "home"){
+    img.src = "https://github.com/EliteKitsPro/EliteKitsPro/blob/main/IMG_0482.jpeg?raw=true";
   }
 
-  if(color === "white"){
-    img.src = "https://github.com/EliteKitsPro/EliteKitsPro/blob/main/IMG_0490.jpeg?raw=true";
+  if(type === "away"){
+    img.src = "https://github.com/EliteKitsPro/EliteKitsPro/blob/main/IMG_0485.jpeg?raw=true";
   }
+}
+</script>
 
-  if(color === "black"){
-    img.src = "https://github.com/EliteKitsPro/EliteKitsPro/blob/main/IMG_0494.jpeg?raw=true";
-  }
+<!-- CART SCRIPT (IMPORTANT) -->
+<script>
+function addToCart(name, price){
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push({name, price: Number(price)});
+  localStorage.setItem("cart", JSON.stringify(cart));
 }
 </script>
 
