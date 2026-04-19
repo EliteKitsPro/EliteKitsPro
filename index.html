@@ -2,44 +2,74 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Brazil Windbreaker</title>
+<title>EliteKitsPro</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="nav">
-  <h2 onclick="location.href='index.html'">EliteKitsPro</h2>
+<div class="hero">
+  <h1>EliteKitsPro</h1>
+  <p>Premium Streetwear Kits</p>
 </div>
 
-<div class="product-page">
+<div class="products">
 
-  <img src="https://raw.githubusercontent.com/Adot-alt/EliteKitsPro/main/IMG_0475.jpeg">
+  <!-- MOROCCO -->
+  <div class="card" onclick="location.href='morocco.html'">
+    <img src="https://raw.githubusercontent.com/Adot-alt/EliteKitsPro/main/IMG_0478.jpeg">
+    <h3>Morocco Jersey</h3>
+    <p>€120</p>
+  </div>
 
-  <h1>Brazil Windbreaker</h1>
-
-  <!-- ✅ UPDATED PRICE -->
-  <p class="price">€120</p>
-
-  <p class="desc">
-    Premium Brazil windbreaker with modern streetwear fit and clean design.
-  </p>
-
-  <select>
-    <option>Select Size</option>
-    <option>S</option>
-    <option>M</option>
-    <option>L</option>
-    <option>XL</option>
-  </select>
-
-  <!-- ✅ UPDATED CART VALUE -->
-  <button onclick="addToCart('Brazil Windbreaker', 120)">
-    Add to Cart
-  </button>
+  <!-- BRAZIL -->
+  <div class="card" onclick="location.href='brazil.html'">
+    <img src="https://raw.githubusercontent.com/Adot-alt/EliteKitsPro/main/IMG_0475.jpeg">
+    <h3>Brazil Windbreaker</h3>
+    <p>€120</p>
+  </div>
 
 </div>
+
+<!-- CART -->
+<div class="cart">
+  <h3>Cart</h3>
+  <div id="cart-items"></div>
+  <p>Total: €<span id="total">0</span></p>
+</div>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(name, price) {
+  cart.push({ name, price });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCart();
+}
+
+function updateCart() {
+  let box = document.getElementById("cart-items");
+  let totalBox = document.getElementById("total");
+
+  if (!box || !totalBox) return;
+
+  box.innerHTML = "";
+  let total = 0;
+
+  cart.forEach(item => {
+    total += item.price;
+
+    let div = document.createElement("div");
+    div.innerHTML = item.name + " - €" + item.price;
+    box.appendChild(div);
+  });
+
+  totalBox.innerText = total;
+}
+
+updateCart();
+</script>
 
 </body>
 </html>
