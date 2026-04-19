@@ -16,18 +16,33 @@
 
   <img id="mainImg" src="https://github.com/EliteKitsPro/EliteKitsPro/blob/main/IMG_0482.jpeg?raw=true">
 
+  <!-- COLOR VARIANTS -->
   <div class="variants">
     <button onclick="changeImg('home')">Home</button>
     <button onclick="changeImg('away')">Away</button>
   </div>
 
-  <button onclick="addToCart('Morocco Jersey', 29.99)">
+  <!-- SIZE SELECT -->
+  <div class="variants">
+    <button onclick="setSize('S')">S</button>
+    <button onclick="setSize('M')">M</button>
+    <button onclick="setSize('L')">L</button>
+    <button onclick="setSize('XL')">XL</button>
+  </div>
+
+  <button onclick="addToCart('Morocco Jersey (' + size + ')', 29.99)">
     Add to Cart
   </button>
 
 </div>
 
 <script>
+let size = "M";
+
+function setSize(s){
+  size = s;
+}
+
 function changeImg(type){
   let img = document.getElementById("mainImg");
 
