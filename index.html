@@ -9,66 +9,26 @@
 
 <body>
 
-<!-- HERO -->
 <div class="hero">
   <h1>EliteKitsPro</h1>
   <p>Premium Football Kits</p>
 </div>
 
-<!-- PRODUCTS -->
 <div class="products">
 
   <div class="card" onclick="location.href='morocco.html'">
     <img src="https://github.com/EliteKitsPro/EliteKitsPro/blob/main/IMG_0482.jpeg?raw=true">
     <h3>Morocco Jersey</h3>
-    <p>€120</p>
+    <p>€29.99</p>
   </div>
 
   <div class="card" onclick="location.href='brazil.html'">
     <img src="https://github.com/EliteKitsPro/EliteKitsPro/blob/main/IMG_0488.jpeg?raw=true">
     <h3>Brazil Windbreaker</h3>
-    <p>€120</p>
+    <p>€49.99</p>
   </div>
 
 </div>
-
-<!-- CART -->
-<div class="cart">
-  <h3>Cart</h3>
-  <div id="cart-items"></div>
-  <p>Total: €<span id="total">0</span></p>
-</div>
-
-<script>
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-function addToCart(name, price) {
-  cart.push({ name, price });
-  localStorage.setItem("cart", JSON.stringify(cart));
-  updateCart();
-}
-
-function updateCart() {
-  let box = document.getElementById("cart-items");
-  let totalBox = document.getElementById("total");
-
-  if (!box || !totalBox) return;
-
-  box.innerHTML = "";
-  let total = 0;
-
-  cart.forEach(item => {
-    total += item.price;
-    let div = document.createElement("div");
-    div.innerHTML = item.name + " - €" + item.price;
-    box.appendChild(div);
-  });
-
-  totalBox.innerText = total;
-}
-
-updateCart();
-</script>
 
 </body>
 </html>
