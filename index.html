@@ -41,7 +41,7 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function addToCart(name, price){
-  cart.push({name, price});
+  cart.push({ name, price: Number(price) });
   localStorage.setItem("cart", JSON.stringify(cart));
   renderCart();
 }
@@ -51,12 +51,12 @@ function renderCart(){
   let total = 0;
 
   cart.forEach(item => {
-    html += "<p>" + item.name + " - €" + item.price + "</p>";
-    total += item.price;
+    html += "<p>" + item.name + " - €" + Number(item.price).toFixed(2) + "</p>";
+    total += Number(item.price);
   });
 
   document.getElementById("cartItems").innerHTML = html;
-  document.getElementById("cartTotal").innerText = "Total: €" + total;
+  document.getElementById("cartTotal").innerText = "Total: €" + total.toFixed(2);
 }
 
 renderCart();
