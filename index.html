@@ -9,24 +9,6 @@
 
 <body>
 
-<!-- ⚽ FLOATING LOGOS -->
-<div class="floating-logos">
-  <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg">
-  <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/FC_Barcelona.svg">
-  <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg">
-  <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Paris_Saint-Germain_F.C..svg">
-  <img src="https://upload.wikimedia.org/wikipedia/en/7/7c/Manchester_United_FC_crest.svg">
-  <img src="https://upload.wikimedia.org/wikipedia/en/1/1f/FC_Bayern_Munich_logo.svg">
-  <img src="https://upload.wikimedia.org/wikipedia/en/e/e9/Argentina_national_football_team_logo.svg">
-  <img src="https://upload.wikimedia.org/wikipedia/en/0/0f/Morocco_national_football_team_logo.svg">
-  <img src="https://upload.wikimedia.org/wikipedia/en/9/96/Belgium_national_football_team_logo.svg">
-</div>
-
-<!-- 🔥 DROP BAR -->
-<div class="drop-bar">
-  🔥 LIMITED DROP — Selling Fast
-</div>
-
 <!-- HERO -->
 <div class="hero">
   <h1>EliteKitsPro</h1>
@@ -40,26 +22,23 @@
     <img src="https://raw.githubusercontent.com/Adot-alt/EliteKitsPro/main/IMG_0478.jpeg">
     <h3>Morocco Jersey</h3>
     <p>€120</p>
-    <p class="stock">Only 7 left</p>
   </div>
 
   <div class="card" onclick="location.href='brazil.html'">
     <img src="https://raw.githubusercontent.com/Adot-alt/EliteKitsPro/main/IMG_0475.jpeg">
     <h3>Brazil Windbreaker</h3>
     <p>€120</p>
-    <p class="stock">Only 5 left</p>
   </div>
 
 </div>
 
-<!-- 🛒 CART -->
+<!-- CART -->
 <div class="cart">
   <h3>Cart</h3>
   <div id="cart-items"></div>
   <p>Total: €<span id="total">0</span></p>
 </div>
 
-<!-- ⚙️ CART SCRIPT -->
 <script>
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -80,7 +59,6 @@ function updateCart() {
 
   cart.forEach(item => {
     total += item.price;
-
     let div = document.createElement("div");
     div.innerHTML = item.name + " - €" + item.price;
     box.appendChild(div);
