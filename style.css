@@ -8,32 +8,6 @@ body {
   background: #0b0b0b;
   color: white;
   overflow-x: hidden;
-  position: relative;
-}
-
-/* ⚽ SAFE FOOTBALL BACKGROUND (VERY SUBTLE) */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image:
-    url("https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg"),
-    url("https://upload.wikimedia.org/wikipedia/en/c/c3/FC_Barcelona.svg"),
-    url("https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg"),
-    url("https://upload.wikimedia.org/wikipedia/en/0/0f/Morocco_national_football_team_logo.svg");
-
-  background-repeat: no-repeat;
-  background-position:
-    10% 20%,
-    80% 25%,
-    30% 80%,
-    75% 75%;
-
-  background-size: 70px;
-  opacity: 0.04;
-
-  pointer-events: none;
-  z-index: -1;
 }
 
 /* HERO */
@@ -44,7 +18,6 @@ body::after {
 
 .hero h1 {
   font-size: 45px;
-  letter-spacing: 1px;
 }
 
 .hero p {
@@ -65,31 +38,22 @@ body::after {
 .card {
   background: #111;
   padding: 15px;
-  border-radius: 14px;
+  border-radius: 12px;
   text-align: center;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: 0.2s;
 }
 
-/* NICE HOVER (premium feel) */
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  transform: scale(1.03);
 }
 
-/* PRODUCT IMAGE */
+/* IMAGE */
 .card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
-}
-
-/* STOCK TEXT */
-.stock {
-  color: #ff4d4d;
-  font-size: 13px;
-  margin-top: 5px;
 }
 
 /* CART */
@@ -103,28 +67,31 @@ body::after {
   border-radius: 12px;
   font-size: 14px;
   z-index: 999;
-  max-height: 80vh;
-  overflow-y: auto;
 }
 
-/* TEXT CLEANUP */
-h1, h2, h3 {
-  margin: 5px 0;
+/* PRODUCT PAGE */
+.product-page {
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: center;
 }
 
-/* SMOOTH BUTTON STYLE (if you use buttons later) */
-button {
-  margin-top: 10px;
-  padding: 10px;
+.product-page img {
   width: 100%;
+  border-radius: 12px;
+}
+
+/* VARIANTS */
+.variants {
+  margin-top: 15px;
+}
+
+.variants button {
+  margin: 5px;
+  padding: 8px 12px;
   background: white;
   border: none;
   cursor: pointer;
   font-weight: bold;
-  border-radius: 8px;
-  transition: 0.2s;
-}
-
-button:hover {
-  opacity: 0.8;
+  border-radius: 6px;
 }
