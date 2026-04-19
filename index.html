@@ -9,33 +9,53 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: black;
+      background: black;
       color: white;
+    }
+
+    /* NAVBAR */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      border-bottom: 1px solid #222;
+    }
+
+    nav img {
+      height: 40px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    /* HERO */
+    .hero {
       text-align: center;
+      padding: 60px 20px;
     }
 
-    header {
-      padding: 30px 0;
-    }
-
-    .logo {
+    .hero img {
       width: 140px;
-      margin-top: 20px;
+      animation: fadeIn 1.5s ease-in-out;
     }
 
-    h1 {
-      margin-top: 10px;
-      font-size: 32px;
+    .hero h1 {
+      font-size: 40px;
+      margin: 10px 0;
       letter-spacing: 2px;
     }
 
-    p {
+    .hero p {
       color: #aaa;
-      margin-top: 10px;
     }
 
-    .button {
-      margin-top: 30px;
+    .btn {
+      margin-top: 20px;
       display: inline-block;
       padding: 12px 25px;
       border: 1px solid white;
@@ -44,22 +64,111 @@
       transition: 0.3s;
     }
 
-    .button:hover {
+    .btn:hover {
       background: white;
       color: black;
+    }
+
+    /* PRODUCTS */
+    .products {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 50px 20px;
+    }
+
+    .card {
+      background: #111;
+      padding: 20px;
+      width: 200px;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background: #1a1a1a;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
+    }
+
+    .price {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #555;
+      border-top: 1px solid #222;
+    }
+
+    /* ANIMATION */
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <img class="logo" src="https://raw.githubusercontent.com/Adot-alt/EliteKitsPro/main/FCD243C7-0E73-47F2-850C-54955D844359.png" alt="EliteKitsPro Logo">
-    <h1>EliteKitsPro</h1>
-    <p>Premium Kits • Clean Style • Pro Gear</p>
-  </header>
+  <!-- NAV -->
+  <nav>
+    <img src="https://raw.githubusercontent.com/Adot-alt/EliteKitsPro/main/FCD243C7-0E73-47F2-850C-54955D844359.png">
+    <div>
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">Drops</a>
+    </div>
+  </nav>
 
-  <a href="#" class="button">Shop Now</a>
+  <!-- HERO -->
+  <div class="hero">
+    <img src="https://raw.githubusercontent.com/Adot-alt/EliteKitsPro/main/FCD243C7-0E73-47F2-850C-54955D844359.png">
+    <h1>EliteKitsPro</h1>
+    <p>Premium Kits • Clean Style • Streetwear Energy</p>
+    <a href="#shop" class="btn">Shop Now</a>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="products" id="shop">
+
+    <div class="card">
+      <img src="https://via.placeholder.com/200">
+      <h3>Pro Kit 1</h3>
+      <div class="price">€29.99</div>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/200">
+      <h3>Elite Kit 2</h3>
+      <div class="price">€34.99</div>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/200">
+      <h3>Street Kit 3</h3>
+      <div class="price">€24.99</div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 EliteKitsPro • Built like a brand
+  </footer>
 
 </body>
 </html>
