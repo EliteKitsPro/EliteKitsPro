@@ -14,6 +14,13 @@
   <p>Football Kits Store</p>
 </div>
 
+<!-- CART -->
+<div class="cart">
+  <h3>Cart</h3>
+  <div id="cartItems"></div>
+  <p id="cartTotal">Total: €0</p>
+</div>
+
 <div class="products">
 
   <div class="card" onclick="location.href='morocco.html'">
@@ -29,6 +36,31 @@
   </div>
 
 </div>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(name, price){
+  cart.push({name, price});
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
+}
+
+function renderCart(){
+  let html = "";
+  let total = 0;
+
+  cart.forEach(item => {
+    html += "<p>" + item.name + " - €" + item.price + "</p>";
+    total += item.price;
+  });
+
+  document.getElementById("cartItems").innerHTML = html;
+  document.getElementById("cartTotal").innerText = "Total: €" + total;
+}
+
+renderCart();
+</script>
 
 </body>
 </html>
