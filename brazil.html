@@ -12,23 +12,38 @@
 <div class="product-page">
 
   <h1>Brazil Windbreaker</h1>
-  <p>€120</p>
+  <p>€49.99</p>
 
   <img id="mainImg" src="https://github.com/EliteKitsPro/EliteKitsPro/blob/main/IMG_0488.jpeg?raw=true">
 
+  <!-- COLOR VARIANTS -->
   <div class="variants">
     <button onclick="changeImg('blue')">Blue</button>
     <button onclick="changeImg('white')">White</button>
     <button onclick="changeImg('black')">Black</button>
   </div>
 
-  <button onclick="addToCart('Brazil Windbreaker', 120)">
+  <!-- SIZE SELECT -->
+  <div class="variants">
+    <button onclick="setSize('S')">S</button>
+    <button onclick="setSize('M')">M</button>
+    <button onclick="setSize('L')">L</button>
+    <button onclick="setSize('XL')">XL</button>
+  </div>
+
+  <button onclick="addToCart('Brazil Windbreaker (' + size + ')', 49.99)">
     Add to Cart
   </button>
 
 </div>
 
 <script>
+let size = "M";
+
+function setSize(s){
+  size = s;
+}
+
 function changeImg(color){
   let img = document.getElementById("mainImg");
 
